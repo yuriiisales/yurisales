@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Entenda o bullying e o cyberbullying, reconheça os sinais, saiba como agir e onde buscar ajuda.">
+<title>Bullying: entender, agir e proteger</title>
+<style>
+:root{--bg:#f5f7fd;--card:#fff;--text:#1b2233;--muted:#586178;--line:#e2e7f4;--accent:#3b5bdb;--accent2:#7048e8;--hot:#e64980;--soft:#edf0ff;--warn:#fff4e0;--ok:#e6f8ef;--shadow:0 4px 18px rgba(30,40,90,.09);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11141f;--card:#1a1f2e;--text:#eef1f8;--muted:#a5aec6;--line:#2a3148;--accent:#8ea2ff;--accent2:#b197fc;--hot:#ff7aa8;--soft:#232a45;--warn:#33280f;--ok:#112b20;--shadow:0 4px 18px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11141f;--card:#1a1f2e;--text:#eef1f8;--muted:#a5aec6;--line:#2a3148;--accent:#8ea2ff;--accent2:#b197fc;--hot:#ff7aa8;--soft:#232a45;--warn:#33280f;--ok:#112b20;--shadow:0 4px 18px rgba(0,0,0,.35);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;text-decoration:none;color:var(--text);font-size:.88rem;font-weight:600;padding:7px 13px;border-radius:999px}
+nav a:hover,nav a.on{background:var(--soft);color:var(--accent)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:21}
+header{background:linear-gradient(135deg,#2b3fb8,#7048e8 60%,#e64980);color:#fff;text-align:center;padding:56px 20px 64px}
+.pill{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 14px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+header h1{margin:16px auto 12px;max-width:720px;font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;font-weight:900}
+header p{margin:0 auto;max-width:620px;font-size:1.1rem;opacity:.96}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;background:#fff;color:#2b3fb8}
+.btn.o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+main{max-width:860px;margin:-32px auto 0;padding:0 16px 20px;position:relative}
+section{background:var(--card);border-radius:20px;padding:26px 22px;margin:18px 0;box-shadow:var(--shadow)}
+h2{margin:0 0 6px;font-size:1.6rem;line-height:1.2}
+h2 .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:1rem;margin-right:10px;vertical-align:middle}
+.lead{color:var(--muted);margin:0 0 18px}
+h3{margin:20px 0 8px;font-size:1.1rem}
+ul{padding-left:20px;margin:8px 0}li{margin:6px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px}
+.box{background:var(--soft);border-radius:14px;padding:15px}
+.box .i{font-size:1.6rem;display:block;margin-bottom:4px}
+.box b{display:block;margin-bottom:3px}
+.box span{font-size:.94rem;color:var(--muted)}
+.def{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.def div{border:2px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.def b{color:var(--accent);display:block;font-size:1.05rem}
+.callout{border-left:5px solid var(--hot);background:var(--warn);border-radius:12px;padding:14px 16px;margin:16px 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.tabs button{border:2px solid var(--line);background:transparent;color:var(--text);border-radius:999px;padding:8px 16px;font:inherit;font-size:.92rem;font-weight:600;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+.panel{display:none;animation:f .25s}
+.panel.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.two>div{border-radius:14px;padding:14px 16px}
+.do{background:var(--ok)}.dont{background:var(--warn)}
+.do h3,.dont h3{margin-top:0}
+details{border:2px solid var(--line);border-radius:14px;padding:4px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:700;padding:10px 0}
+details p{margin:0 0 12px;color:var(--muted)}
+.law{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.law div{background:var(--soft);border-radius:14px;padding:15px}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.help div{background:linear-gradient(135deg,var(--soft),var(--card));border:2px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.tel{display:block;font-size:2rem;font-weight:900;color:var(--hot);line-height:1.1}
+.help small{color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:20px 20px 44px;font-size:.92rem}
+@media (max-width:520px){section{padding:22px 16px}h2{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<nav id="nav">
+<a href="#oque">O que é</a><a href="#tipos">Tipos</a><a href="#hoje">Hoje</a><a href="#sinais">Sinais</a><a href="#agir">Como agir</a><a href="#lei">Lei</a><a href="#duvidas">Dúvidas</a><a href="#ajuda">Ajuda</a>
+</nav>
+<header>
+<span class="pill">Informação que protege</span>
+<h1>Bullying: entender, agir e proteger</h1>
+<p>Ninguém merece sofrer em silêncio. Reconhecer a violência e agir com consciência muda a vida de quem sofre, de quem vê e de quem pratica.</p>
+<div class="cta"><a class="btn" href="#agir">Como agir</a><a class="btn o" href="#ajuda">Preciso de ajuda</a></div>
+</header>
+<main>
+
+<section id="oque">
+<h2><span class="n">1</span>O que é bullying?</h2>
+<p class="lead">É a violência intencional, física ou psicológica, que se repete contra alguém que tem dificuldade de se defender.</p>
+<div class="def">
+<div><b>Intenção</b>Há a vontade de machucar, humilhar ou excluir.</div>
+<div><b>Repetição</b>Acontece várias vezes, não é um episódio isolado.</div>
+<div><b>Desequilíbrio de poder</b>A vítima tem dificuldade de reagir sozinha.</div>
+</div>
+<div class="callout"><b>Não é “só brincadeira”.</b> Brincadeira é quando todos riem juntos. Quando só um lado ri e o outro sofre, deixou de ser brincadeira.</div>
+</section>
+
+<section id="tipos">
+<h2><span class="n">2</span>Tipos de bullying</h2>
+<p class="lead">Nem sempre deixa marcas visíveis, mas todas as formas machucam.</p>
+<div class="grid">
+<div class="box"><span class="i">👊</span><b>Físico</b><span>Empurrões, tapas, chutes, destruir objetos.</span></div>
+<div class="box"><span class="i">🗯️</span><b>Verbal</b><span>Apelidos ofensivos, insultos, xingamentos, ameaças.</span></div>
+<div class="box"><span class="i">🚷</span><b>Social e psicológico</b><span>Exclusão, fofocas, humilhação, chantagem emocional.</span></div>
+<div class="box"><span class="i">🔒</span><b>Sexual</b><span>Comentários, toques ou exposição sem consentimento.</span></div>
+<div class="box"><span class="i">🎒</span><b>Material</b><span>Roubar, esconder ou estragar pertences.</span></div>
+<div class="box"><span class="i">📱</span><b>Virtual (cyberbullying)</b><span>Mensagens, memes, perfis falsos, exposição em redes e jogos.</span></div>
+</div>
+</section>
+
+<section id="hoje">
+<h2><span class="n">3</span>Por que está tão difícil hoje?</h2>
+<p class="lead">As telas mudaram a forma como a violência acontece e por quanto tempo ela dura.</p>
+<div class="grid">
+<div class="box"><span class="i">🌙</span><b>Não tem hora para acabar</b><span>Antes ficava na escola. Agora segue a vítima até o quarto, a qualquer hora.</span></div>
+<div class="box"><span class="i">📣</span><b>Plateia enorme</b><span>Um print ou vídeo se espalha em minutos e é difícil de apagar.</span></div>
+<div class="box"><span class="i">🎭</span><b>Anonimato</b><span>Perfis falsos dão ao agressor a sensação de impunidade.</span></div>
+<div class="box"><span class="i">🤐</span><b>Silêncio e vergonha</b><span>Medo de represália, de ser chamado de “dedo-duro” ou de ficar sem o celular.</span></div>
+<div class="box"><span class="i">😶</span><b>Normalização</b><span>A humilhação virou “zoeira” e “conteúdo”, o que apaga o limite.</span></div>
+<div class="box"><span class="i">🧠</span><b>Impactos reais</b><span>Ansiedade, tristeza, queda nas notas, isolamento e, em casos graves, risco à vida.</span></div>
+</div>
+</section>
+
+<section id="sinais">
+<h2><span class="n">4</span>Sinais de alerta</h2>
+<p class="lead">Uma mudança repentina de comportamento merece atenção e conversa.</p>
+<div class="two">
+<div class="do"><h3>Emocionais e de comportamento</h3><ul><li>Tristeza, irritação ou medo sem motivo claro</li><li>Isolamento, perda de interesse em atividades</li><li>Evitar a escola ou inventar desculpas para faltar</li><li>Ficar tenso ao ver o celular, ou largar as redes de repente</li></ul></div>
+<div class="do"><h3>Físicos e do dia a dia</h3><ul><li>Dor de barriga ou de cabeça frequentes</li><li>Alterações no sono e na alimentação</li><li>Queda no rendimento escolar</li><li>Objetos sumindo, roupas rasgadas, machucados sem explicação</li></ul></div>
+</div>
+</section>
+
+<section id="agir">
+<h2><span class="n">5</span>Como lidar de forma consciente</h2>
+<p class="lead">Escolha o seu papel e veja o que fazer.</p>
+<div class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-p="p1">Sofro bullying</button>
+<button role="tab" aria-selected="false" data-p="p2">Vi acontecer</button>
+<button role="tab" aria-selected="false" data-p="p3">Sou pai ou mãe</button>
+<button role="tab" aria-selected="false" data-p="p4">Sou escola</button>
+<button role="tab" aria-selected="false" data-p="p5">Eu pratiquei</button>
+</div>
+
+<div class="panel on" id="p1">
+<div class="two">
+<div class="do"><h3>✅ O que fazer</h3><ul><li><b>A culpa não é sua.</b> O erro está em quem agride.</li><li>Conte para alguém de confiança: família, professor, coordenação, psicólogo.</li><li>Guarde provas: prints, mensagens, datas e nomes.</li><li>Bloqueie e denuncie o perfil na plataforma.</li><li>Cuide de você: durma bem, mexa o corpo, fique perto de quem te faz bem.</li></ul></div>
+<div class="dont"><h3>⚠️ O que evitar</h3><ul><li>Revidar com agressão</li><li>Apagar as provas</li><li>Guardar tudo em segredo</li><li>Achar que precisa aguentar sozinho(a)</li></ul></div>
+</div>
+</div>
+
+<div class="panel" id="p2">
+<div class="two">
+<div class="do"><h3>✅ O que fazer</h3><ul><li>Acolha a vítima: uma conversa ou um convite faz diferença.</li><li>Mostre que a atitude não é aceita, sem se expor ao perigo.</li><li>Avise um adulto responsável. Isso é proteção, não delação.</li><li>Denuncie conteúdos ofensivos nas redes.</li></ul></div>
+<div class="dont"><h3>⚠️ O que evitar</h3><ul><li>Rir, curtir ou comentar</li><li>Compartilhar prints, vídeos ou memes</li><li>Ficar em silêncio por medo de “se meter”</li></ul></div>
+</div>
+</div>
+
+<div class="panel" id="p3">
+<div class="two">
+<div class="do"><h3>✅ O que fazer</h3><ul><li>Escute com calma, sem julgar nem minimizar.</li><li>Agradeça a confiança e reforce que não é culpa do seu filho ou filha.</li><li>Registre os fatos e procure a escola, por escrito.</li><li>Busque apoio psicológico quando houver sofrimento.</li><li>Converse sempre sobre respeito e uso responsável das redes.</li></ul></div>
+<div class="dont"><h3>⚠️ O que evitar</h3><ul><li>Dizer “isso passa” ou “revide”</li><li>Tirar o celular como castigo (pode fazer o jovem esconder o problema)</li><li>Confrontar o agressor ou os pais dele de forma agressiva</li></ul></div>
+</div>
+</div>
+
+<div class="panel" id="p4">
+<div class="two">
+<div class="do"><h3>✅ O que fazer</h3><ul><li>Ter um protocolo claro de prevenção e resposta, conhecido por todos.</li><li>Criar canais seguros e, se possível, anônimos para denúncia.</li><li>Acolher a vítima e acompanhar o caso até o fim.</li><li>Trabalhar com o agressor e com a turma, não apenas punir.</li><li>Incluir empatia e cidadania digital no dia a dia.</li></ul></div>
+<div class="dont"><h3>⚠️ O que evitar</h3><ul><li>Tratar como “coisa de criança”</li><li>Colocar vítima e agressor frente a frente sem preparo</li><li>Culpar a vítima pelo que sofreu</li></ul></div>
+</div>
+</div>
+
+<div class="panel" id="p5">
+<div class="callout" style="border-color:var(--accent)">Reconhecer o erro é um ato de coragem. Parar é possível, e mudar também.</div>
+<ul><li>Pare agora e pense em como a outra pessoa se sente.</li><li>Peça desculpas com sinceridade, sem exigir perdão.</li><li>Apague e não compartilhe mais o que machuca.</li><li>Procure ajuda para entender o que está por trás desse comportamento.</li><li>Escolha ser quem protege, não quem machuca.</li></ul>
+</div>
+</section>
+
+<section id="lei">
+<h2><span class="n">6</span>O que diz a lei no Brasil</h2>
+<p class="lead">Bullying tem consequências legais e a escola tem o dever de agir.</p>
+<div class="law">
+<div><b>Lei 13.185/2015</b><br>Criou o Programa de Combate à Intimidação Sistemática (bullying) e prevê ações de prevenção nas escolas.</div>
+<div><b>Lei 14.811/2024</b><br>Passou a tratar a intimidação sistemática (bullying) e a intimidação sistemática virtual (cyberbullying) como crime. No cyberbullying, a pena é de reclusão de 2 a 4 anos, além de multa.</div>
+<div><b>ECA</b><br>O Estatuto da Criança e do Adolescente garante proteção integral. Adolescentes respondem por atos infracionais.</div>
+</div>
+</section>
+
+<section id="duvidas">
+<h2><span class="n">7</span>Dúvidas frequentes</h2>
+<details><summary>Qual a diferença entre bullying e uma briga?</summary><p>Na briga, as duas partes estão em condições parecidas e é algo pontual. No bullying há repetição, intenção de ferir e uma parte com dificuldade de se defender.</p></details>
+<details><summary>Meu filho não quer contar o que acontece. E agora?</summary><p>Seja paciente. Crie um ambiente sem julgamentos, pergunte sobre o dia a dia, observe os sinais e, se preciso, procure a escola e um profissional de psicologia.</p></details>
+<details><summary>Denunciar não vai piorar a situação?</summary><p>Esse é um medo comum. Por isso é importante formalizar o caso, guardar provas e exigir acompanhamento da escola. Ficar calado costuma manter o problema.</p></details>
+<details><summary>Quem pratica bullying também precisa de ajuda?</summary><p>Sim. Muitos agressores têm dificuldades emocionais ou já sofreram violência. Responsabilizar e orientar, juntos, é o caminho mais eficaz.</p></details>
+<details><summary>O que fazer diante de cyberbullying?</summary><p>Não responda, faça prints com data, bloqueie, denuncie na plataforma, avise um adulto e, se houver ameaça ou exposição íntima, procure a polícia.</p></details>
+</section>
+
+<section id="ajuda">
+<h2><span class="n">8</span>Onde buscar ajuda</h2>
+<p class="lead">Você não precisa passar por isso sozinho(a).</p>
+<div class="help">
+<div><span class="tel">188</span><b>CVV</b><br><small>Apoio emocional 24h, gratuito</small></div>
+<div><span class="tel">100</span><b>Disque Direitos Humanos</b><br><small>Denúncias, gratuito</small></div>
+<div><span class="tel">190</span><b>Polícia Militar</b><br><small>Ameaças e risco imediato</small></div>
+<div><span class="tel">192</span><b>SAMU</b><br><small>Emergência de saúde</small></div>
+</div>
+<p style="margin-top:16px"><b>Violência online:</b> a SaferNet Brasil mantém um canal de ajuda e denúncia. Também vale procurar o Conselho Tutelar, a coordenação da escola e a Delegacia da Criança e do Adolescente.</p>
+<div class="callout"><b>Se houver pensamentos de se machucar,</b> fale agora com um adulto de confiança, ligue para o 188 ou vá ao serviço de saúde mais próximo.</div>
+</section>
+
+</main>
+<footer>Respeito começa com cada um de nós. 💙<br>Compartilhe esta página: ela pode ajudar alguém.</footer>
+<script>
+document.querySelectorAll(".tabs button").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected","false")});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("on")});
+    b.setAttribute("aria-selected","true");
+    document.getElementById(b.dataset.p).classList.add("on");
+  });
+});
+var links=document.querySelectorAll("nav a"),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute("href"))});
+function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle("on",i===cur)})}
+window.addEventListener("scroll",spy,{passive:true});spy();
+</script>
+</body>
+</html>
